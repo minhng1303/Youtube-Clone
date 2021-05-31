@@ -1,0 +1,29 @@
+@import "../../root";
+.categoryBar {
+  width: 85%;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  display: flex;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  scrollbar-width: none;
+  span {
+    margin-right: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    border: 1.5px solid $text-color;
+    border-radius: 999px;
+
+    &.active {
+      color: #fff;
+      background-color: #606060;
+      border-color: $border-color;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: #324e63;
+    }
+  }
+}

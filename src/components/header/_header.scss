@@ -1,0 +1,82 @@
+@import "../../_root.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 3rem;
+
+  background-color: $black-primary;
+
+  height: 15vh;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+
+  z-index: 999;
+  button {
+    background-color: transparent;
+    border: none;
+  }
+  form {
+    background-color: $black-secondary;
+    border-radius: 3px;
+    border: 0.8px solid;
+    display: flex;
+    justify-content: end;
+
+    input {
+      background: transparent;
+      color: $text-color;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__logo {
+    width: 40px;
+    height: 27px;
+  }
+  &__search {
+    color: $text-color;
+  }
+  &__icons {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-right: 15px;
+    align-items: center;
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .header {
+    padding: 1rem 1rem;
+    &__menu {
+      margin-left: 1rem;
+    }
+    &__logo {
+      display: none;
+    }
+    &__icons > *:not(img) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__logo {
+      display: none;
+    }
+    &__icons > *:not(img) {
+      display: none;
+    }
+  }
+}

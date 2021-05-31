@@ -1,0 +1,53 @@
+@import "../../root";
+
+.video {
+  margin: 1rem 0;
+  //   padding: 0.5rem;
+  font-weight: 500;
+
+  &__top {
+    margin-bottom: 0.5rem;
+    position: relative;
+    cursor: pointer;
+
+    &-thumbnail {
+      width: 100% !important;
+    }
+    &-duration {
+      position: absolute !important;
+      bottom: 0.3rem;
+      right: 0.3rem;
+      padding: 0.2rem;
+      background: #080808ec;
+      border-radius: 3px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    margin-top: 1rem;
+    cursor: pointer;
+    align-items: center;
+    &-thumbnail {
+      margin-right: 0.4rem;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+    }
+    &-title {
+      color: #fff;
+      font-size: 18px;
+      @include line-clamp(1);
+    }
+    &-detail {
+      display: flex;
+      align-items: center;
+    }
+    &-channel {
+      &:hover {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+}
