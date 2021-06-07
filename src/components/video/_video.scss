@@ -3,13 +3,21 @@
 .video {
   margin: 1rem 0;
   //   padding: 0.5rem;
+  font-size: 14px;
+
   font-weight: 500;
 
   &__top {
     margin-bottom: 0.5rem;
     position: relative;
     cursor: pointer;
-
+    .lazy-load-image-background {
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
     &-thumbnail {
       width: 100% !important;
     }
@@ -28,6 +36,14 @@
     margin-top: 1rem;
     cursor: pointer;
     align-items: center;
+    .lazy-load-image-background {
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 45px;
+        margin-right: 5px;
+      }
+    }
     &-thumbnail {
       margin-right: 0.4rem;
       border-radius: 50%;
@@ -36,7 +52,6 @@
     }
     &-title {
       color: #fff;
-      font-size: 18px;
       @include line-clamp(1);
     }
     &-detail {

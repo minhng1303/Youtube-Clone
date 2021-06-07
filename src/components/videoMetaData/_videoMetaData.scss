@@ -1,0 +1,46 @@
+@import "../../root.scss";
+.videoMeta {
+  &__top {
+    span {
+      cursor: pointer;
+    }
+  }
+  &__channel {
+    // d-flex justify-content-between my-2 py-2
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0.75rem 0;
+    border-top: 0.2px solid $border-color;
+    border-bottom: 0.2px solid $border-color;
+
+    button {
+      color: #fff;
+      text-transform: uppercase;
+      // background-color: #da342f;
+      letter-spacing: 0.1px;
+      &:hover {
+        color: #fff;
+      }
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    white-space: pre-line;
+    border-bottom: 0.2px solid $border-color;
+    padding-bottom: 1rem;
+    .showMoreText {
+      text-decoration: none;
+      display: block;
+      color: #fff;
+      margin: 0.5rem 0;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+}

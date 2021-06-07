@@ -1,0 +1,67 @@
+@import "../../root";
+.videoSidebar {
+  border-bottom: 0.3px solid $border-color;
+  cursor: pointer;
+
+  &__left {
+    position: relative;
+    text-align: center;
+  }
+  &__duration {
+    position: absolute;
+    bottom: 0.3rem;
+    padding: 0.2rem;
+    right: 0.3rem;
+    font-size: 0.75rem;
+    background: #080808ec;
+    border-radius: 3px;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    &-channel {
+      width: 50%;
+      border-radius: 50%;
+      padding: 0 1rem;
+      margin: 1rem 0;
+    }
+    &-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__description {
+    @include line-clamp(3);
+  }
+
+  &__channel {
+    font-size: 0.85rem;
+    // d-flex justify-content-start align-items-center
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    img {
+      width: 22px;
+      height: 22px;
+      margin-right: 0.5rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__details {
+    font-size: 0.75rem;
+  }
+
+  &__title {
+    font-size: 0.9rem;
+    color: #fff;
+    @include line-clamp(2);
+    &-isSearch {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      @include line-clamp(2);
+    }
+  }
+}

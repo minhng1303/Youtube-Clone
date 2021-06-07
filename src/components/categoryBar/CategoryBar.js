@@ -29,6 +29,9 @@ function CategoryBar() {
   const [activeTag, setActiveTag] = useState("All");
   const dispatch = useDispatch();
   const handleClick = (value) => {
+    if (activeTag === value) {
+      return;
+    }
     setActiveTag(value);
     if (value === "All") {
       dispatch(getPopularVideo(value));

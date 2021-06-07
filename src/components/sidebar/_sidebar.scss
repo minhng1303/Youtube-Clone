@@ -3,18 +3,36 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 200px;
   padding: 0.75rem 0;
-  height: 90vh;
-  transition: transform 0.2s ease-in;
+  height: 100vh;
+  transition: transform 0.3s ease-in;
   background-color: $black-secondary;
   border-right: 0.5px solid $border-color;
   position: sticky;
-  top: 15vh;
+  top: 0;
   left: 0px;
+  transform: translateX(-100%);
+  position: fixed;
+  z-index: 9999;
+
+  &__header {
+    font-weight: 550;
+    &__title {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  }
+  &.open {
+    transform: translateX(0);
+    top: 0;
+  }
   hr {
     background: #acacac;
     height: 0.1px;
+  }
+  a {
+    color: $text-color;
   }
   li {
     display: flex;
@@ -29,8 +47,7 @@
       font-weight: 550;
       letter-spacing: 0.3px;
     }
-
-    &:hover {
+    &:hover:not(:first-child) {
       background-color: $border-color;
     }
   }

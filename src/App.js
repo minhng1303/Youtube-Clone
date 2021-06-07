@@ -7,6 +7,10 @@ import LoginScreen from "./pages/loginScreen/LoginScreen";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import "./_app.scss";
 import { useSelector } from "react-redux";
+import WatchScreen from "./pages/watchScreen/WatchScreen";
+import SearchScreen from "./pages/searchScreen/SearchScreen";
+import SubscriptionScreen from "./pages/subscriptionScreen/SubscriptionScreen";
+import ChannelScreen from "./pages/channelScreen/ChannelScreen";
 
 const Layout = ({ children }) => {
   const [sideBar, toggleSidebar] = useState(false);
@@ -15,14 +19,9 @@ const Layout = ({ children }) => {
   };
   return (
     <div>
+      <Sidebar sideBar={sideBar} handleToggleSidebar={handleToggleSidebar} />
       <Header handleToggleSidebar={handleToggleSidebar} />
       <div className="app__container">
-        {
-          <Sidebar
-            sideBar={sideBar}
-            handleToggleSidebar={handleToggleSidebar}
-          />
-        }
         <Container fluid className="app__main">
           {children}
         </Container>
@@ -43,9 +42,24 @@ function App() {
       <Route path="/auth">
         <LoginScreen />
       </Route>
-      <Route path="/search">
+      <Route path="/search/:query">
         <Layout>
-          <h1> Search Page</h1>
+          <SearchScreen />
+        </Layout>
+      </Route>
+      <Route exact path="/feed/subscriptions">
+        <Layout>
+          <SubscriptionScreen />
+        </Layout>
+      </Route>
+      <Route exact path="/channel/:channelId">
+        <Layout>
+          <ChannelScreen />
+        </Layout>
+      </Route>
+      <Route exact path="/watch/:id">
+        <Layout>
+          <WatchScreen />
         </Layout>
       </Route>
       <Route exact path="/">

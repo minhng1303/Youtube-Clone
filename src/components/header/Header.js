@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
 import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
 
 function Header({ handleToggleSidebar }) {
+  const [input, setInput] = useState("");
+  const history = useHistory();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    history.push(`/search/${input}`);
+  };
   return (
     <Row className="header">
-      <Col sm={1} xs={1}>
+      <Col sm={1} md={2} xs={1}>
         <FaBars
           className="header__menu ml-3"
           size={22}
@@ -21,7 +28,12 @@ function Header({ handleToggleSidebar }) {
         />
       </Col>
       <Col md={8} sm={10} xs={9}>
-        <form className="col-md-10 py-1 pr-0 mx-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="col-md-10 py-1 pr-0 mx-auto"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        >
           <input
             className="col-11 ml-auto px-0"
             type="text"
